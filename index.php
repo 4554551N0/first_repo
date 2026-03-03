@@ -1,5 +1,1 @@
-<?php
-echo "Hello World !!";
-
-echo "second version";
-
+<h1>Hello World</h1>
