@@ -789,6 +789,84 @@
       footer { padding: 2rem; flex-direction: column; gap: 1rem; text-align: center; }
       .hero-scroll { left: 2rem; }
     }
+
+    /* ── Gallery ── */
+    .proj-gallery {
+      margin-bottom: 1.5rem;
+    }
+
+    .gallery-thumbs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .gallery-thumb {
+      width: 80px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      opacity: 0.6;
+      transition: all 0.2s;
+    }
+
+    .gallery-thumb:hover,
+    .gallery-thumb.active {
+      opacity: 1;
+      border-color: rgba(79,255,176,0.5);
+    }
+
+    /* Demo button */
+    .proj-demo {
+      color: var(--accent) !important;
+    }
+
+    /* ── Lightbox ── */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+    }
+
+    #lightbox.open {
+      display: flex;
+    }
+
+    .lb-inner {
+      position: relative;
+      max-width: 90vw;
+      max-height: 85vh;
+    }
+
+    #lb-img {
+      max-width: 100%;
+      max-height: 85vh;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    .lb-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-family: 'DM Mono', monospace;
+      transition: color 0.2s;
+    }
+
+    .lb-close:hover { color: var(--text); }
   </style>
 </head>
 <body>
@@ -833,20 +911,20 @@
   <div class="stats-row">
     <div class="stats-inner">
       <div class="stat-item">
-        <span class="stat-num">4+</span>
+        <span class="stat-num">1.5+</span>
         <span class="stat-label">Years Experience</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num">30+</span>
+        <span class="stat-num">3+</span>
         <span class="stat-label">Projects Delivered</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num">12+</span>
-        <span class="stat-label">Happy Clients</span>
+        <span class="stat-num">10+</span>
+        <span class="stat-label">Technologies</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num">99%</span>
-        <span class="stat-label">Client Satisfaction</span>
+        <span class="stat-num">Full</span>
+        <span class="stat-label">Stack Coverage</span>
       </div>
     </div>
   </div>
@@ -857,13 +935,13 @@
     <h2>Crafting digital<br>products that work.</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm a full stack developer who cares about <span>clean architecture</span> and <span>thoughtful user experience</span>. I work across the entire stack — from designing relational schemas to polishing micro-interactions.</p>
-        <p>My approach is pragmatic: I pick the right tool for the job, write code that future-me (and teammates) can understand, and ship things that actually work in production.</p>
-        <p>When I'm not building, I'm reading about <span>system design</span>, contributing to open source, or breaking something just to learn how to fix it.</p>
+        <p>I'm a full stack developer with <span>1.5 years of hands-on experience</span> building real-world web applications from the ground up — covering everything from database design to polished user interfaces.</p>
+        <p>On the frontend, I work confidently with <span>React</span> and its ecosystem, having built a full-featured admin dashboard with multi-language support, theme switching, state management, and component libraries. On the backend, I rely on <span>PHP and MySQL</span> to build solid, maintainable APIs and data layers.</p>
+        <p>I learn fast, take ownership of what I build, and care about <span>writing code that works in production</span> — not just in theory.</p>
         <div class="about-details">
           <div class="detail-row">
-            <span class="detail-key">Location</span>
-            <span class="detail-val">Remote / Worldwide</span>
+            <span class="detail-key">Focus</span>
+            <span class="detail-val">Frontend-heavy Full Stack</span>
           </div>
           <div class="detail-row">
             <span class="detail-key">Availability</span>
@@ -878,38 +956,40 @@
       <div class="skills-side">
         <h3>Core Skills</h3>
         <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>Frontend Development</span><span>92%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%"></div></div>
+          <div class="skill-bar-top"><span>HTML / CSS / JavaScript</span><span>Advanced</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
         </div>
         <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>Backend & APIs</span><span>88%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div>
+          <div class="skill-bar-top"><span>React & Ecosystem</span><span>Proficient</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:78%"></div></div>
         </div>
         <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>Database Design</span><span>85%</span></div>
+          <div class="skill-bar-top"><span>TypeScript & Tailwind</span><span>Advanced</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:82%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>PHP Backend</span><span>Very Good</span></div>
           <div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div>
         </div>
         <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>DevOps & Deployment</span><span>75%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:75%"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>UI/UX Design</span><span>80%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
+          <div class="skill-bar-top"><span>MySQL</span><span>Good</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:72%"></div></div>
         </div>
         <div class="tech-tags">
-          <span class="tech-tag">React</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
           <span class="tech-tag">TypeScript</span>
-          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Tailwind CSS</span>
+          <span class="tech-tag">React Query</span>
+          <span class="tech-tag">Zustand</span>
+          <span class="tech-tag">Axios</span>
+          <span class="tech-tag">shadcn/ui</span>
+          <span class="tech-tag">i18next</span>
           <span class="tech-tag">PHP</span>
           <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">Tailwind</span>
-          <span class="tech-tag">Docker</span>
           <span class="tech-tag">Git</span>
-          <span class="tech-tag">REST APIs</span>
-          <span class="tech-tag">Vite</span>
-          <span class="tech-tag">Linux</span>
-          <span class="tech-tag">Redis</span>
         </div>
       </div>
     </div>
@@ -930,17 +1010,22 @@
         <!-- Featured -->
         <div class="project-card featured">
           <div class="project-num">01 — Featured</div>
-          <div class="project-title">Admin Dashboard Platform</div>
-          <p class="project-desc">A comprehensive admin panel with role-based access control, real-time analytics, and a fully responsive interface. Built with a focus on performance and scalability.</p>
+          <div class="project-title">Real Estate CRM</div>
+          <p class="project-desc">A full-featured CRM system built for a real estate company — managing leads, clients, and property listings. Includes a dynamic dashboard, user roles, and a clean interface designed for daily operational use.</p>
           <div class="project-stack">
-            <span class="stack-pill">React</span>
-            <span class="stack-pill">TypeScript</span>
             <span class="stack-pill">PHP</span>
+            <span class="stack-pill">JavaScript</span>
             <span class="stack-pill">MySQL</span>
-            <span class="stack-pill">TanStack Query</span>
+          </div>
+          <div class="proj-gallery">
+            <div class="gallery-thumbs">
+              <img src="https://placehold.co/800x450/0d1117/4fffb0?text=Screenshot+1" class="gallery-thumb active" onclick="openLightbox(this.src)" />
+              <img src="https://placehold.co/800x450/0d1117/4fffb0?text=Screenshot+2" class="gallery-thumb" onclick="openLightbox(this.src)" />
+              <img src="https://placehold.co/800x450/0d1117/4fffb0?text=Screenshot+3" class="gallery-thumb" onclick="openLightbox(this.src)" />
+            </div>
           </div>
           <div class="project-links">
-            <a href="#" class="proj-link">Live Demo <span class="arrow">↗</span></a>
+            <a href="#" class="proj-link proj-demo">Live Demo <span class="arrow">↗</span></a>
             <a href="#" class="proj-link">GitHub <span class="arrow">↗</span></a>
           </div>
         </div>
@@ -948,14 +1033,23 @@
         <!-- Card 2 -->
         <div class="project-card">
           <div class="project-num">02</div>
-          <div class="project-title">E-Commerce API</div>
-          <p class="project-desc">RESTful API powering a multi-vendor marketplace. Handles inventory, payments, and order lifecycle with comprehensive logging.</p>
+          <div class="project-title">Business Website + Admin Panel</div>
+          <p class="project-desc">A complete web presence with a public-facing site and a lightweight admin panel for content management — fully connected to a PHP/MySQL backend.</p>
           <div class="project-stack">
-            <span class="stack-pill">Node.js</span>
-            <span class="stack-pill">Express</span>
-            <span class="stack-pill">PostgreSQL</span>
+            <span class="stack-pill">HTML</span>
+            <span class="stack-pill">CSS</span>
+            <span class="stack-pill">JavaScript</span>
+            <span class="stack-pill">PHP</span>
+            <span class="stack-pill">MySQL</span>
+          </div>
+          <div class="proj-gallery">
+            <div class="gallery-thumbs">
+              <img src="https://placehold.co/800x450/0d1117/4fffb0?text=Screenshot+1" class="gallery-thumb active" onclick="openLightbox(this.src)" />
+              <img src="https://placehold.co/800x450/0d1117/4fffb0?text=Screenshot+2" class="gallery-thumb" onclick="openLightbox(this.src)" />
+            </div>
           </div>
           <div class="project-links">
+            <a href="#" class="proj-link proj-demo">Live Demo <span class="arrow">↗</span></a>
             <a href="#" class="proj-link">GitHub <span class="arrow">↗</span></a>
           </div>
         </div>
@@ -963,30 +1057,23 @@
         <!-- Card 3 -->
         <div class="project-card">
           <div class="project-num">03</div>
-          <div class="project-title">Real-time Chat App</div>
-          <p class="project-desc">WebSocket-powered messaging application with rooms, file sharing, and read receipts. Supports thousands of concurrent connections.</p>
+          <div class="project-title">Website + React Dashboard</div>
+          <p class="project-desc">A modern website with a Tailwind-powered frontend paired with a fully-featured React admin dashboard — featuring multi-language support, theme switching, and a component-rich UI.</p>
           <div class="project-stack">
             <span class="stack-pill">React</span>
-            <span class="stack-pill">Socket.io</span>
-            <span class="stack-pill">Redis</span>
+            <span class="stack-pill">Tailwind CSS</span>
+            <span class="stack-pill">PHP</span>
+            <span class="stack-pill">MySQL</span>
+            <span class="stack-pill">i18next</span>
+          </div>
+          <div class="proj-gallery">
+            <div class="gallery-thumbs">
+              <img src="https://placehold.co/800x450/0d1117/4fffb0?text=Screenshot+1" class="gallery-thumb active" onclick="openLightbox(this.src)" />
+              <img src="https://placehold.co/800x450/0d1117/4fffb0?text=Screenshot+2" class="gallery-thumb" onclick="openLightbox(this.src)" />
+            </div>
           </div>
           <div class="project-links">
-            <a href="#" class="proj-link">Live Demo <span class="arrow">↗</span></a>
-            <a href="#" class="proj-link">GitHub <span class="arrow">↗</span></a>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="project-card">
-          <div class="project-num">04</div>
-          <div class="project-title">Portfolio CMS</div>
-          <p class="project-desc">Headless CMS with a custom content editor, image optimization pipeline, and CDN integration for static asset delivery.</p>
-          <div class="project-stack">
-            <span class="stack-pill">Next.js</span>
-            <span class="stack-pill">Prisma</span>
-            <span class="stack-pill">S3</span>
-          </div>
-          <div class="project-links">
+            <a href="#" class="proj-link proj-demo">Live Demo <span class="arrow">↗</span></a>
             <a href="#" class="proj-link">GitHub <span class="arrow">↗</span></a>
           </div>
         </div>
@@ -995,6 +1082,27 @@
     </div>
   </section>
 
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <div class="lb-inner" onclick="event.stopPropagation()">
+      <button class="lb-close" onclick="closeLightbox()">✕ close</button>
+      <img id="lb-img" src="" alt="Preview" />
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+
   <!-- Experience -->
   <section id="experience">
     <div class="section-label">Experience</div>
@@ -1002,24 +1110,17 @@
     <div class="timeline">
 
       <div class="timeline-item">
-        <div class="timeline-period">2022 — Present</div>
-        <div class="timeline-role">Senior Full Stack Developer</div>
-        <div class="timeline-company">TechCorp Solutions</div>
-        <p class="timeline-desc">Lead development of client-facing SaaS products. Architected microservice migration reducing API response time by 40%. Mentored junior developers and established code review standards.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-period">2020 — 2022</div>
+        <div class="timeline-period">2024 — Present</div>
         <div class="timeline-role">Full Stack Developer</div>
-        <div class="timeline-company">Digital Agency XYZ</div>
-        <p class="timeline-desc">Built custom web applications for 15+ clients across e-commerce, fintech, and healthcare sectors. Introduced automated testing that reduced bug reports by 60%.</p>
+        <div class="timeline-company">Freelance</div>
+        <p class="timeline-desc">Building complete web solutions independently — from gathering requirements to deployment. Projects span CRM systems, business websites, and admin dashboards, all developed with a PHP/MySQL backend and modern frontend technologies including React.</p>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-period">2019 — 2020</div>
-        <div class="timeline-role">Junior Frontend Developer</div>
-        <div class="timeline-company">Startup Inc.</div>
-        <p class="timeline-desc">Developed responsive UI components and integrated third-party APIs. First professional experience with React and TypeScript in a production environment.</p>
+        <div class="timeline-period">2023 — 2024</div>
+        <div class="timeline-role">Self-taught Developer</div>
+        <div class="timeline-company">Learning & Building</div>
+        <p class="timeline-desc">Dedicated period of intensive learning — mastering HTML, CSS, JavaScript, PHP, and MySQL through real projects. Progressed into TypeScript, React, and its broader ecosystem including React Query, Zustand, and component libraries like shadcn/ui.</p>
       </div>
 
     </div>
